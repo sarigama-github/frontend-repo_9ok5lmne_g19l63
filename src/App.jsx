@@ -49,7 +49,8 @@ function App() {
         <Features />
         <Narrative />
         <Cards />
-        <Process />
+        {/* Removed How we work section per request */}
+        {/* <Process /> */}
         <CaseStudies />
         <Premium />
         <Who />

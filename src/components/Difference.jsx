@@ -22,7 +22,7 @@ const rows = [
 
 export default function Difference() {
   return (
-    <SectionWrap id="difference" tone="sky" title="The Difference Between Average & Excellence">
+    <SectionWrap id="difference" tone="sky" title="Why companies partner with me (and fire everyone else)">
       <div className="space-y-8 sm:space-y-10 md:space-y-12">
         {rows.map((r, i) => (
           <motion.div

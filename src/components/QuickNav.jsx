@@ -4,7 +4,7 @@ const links = [
   { id: 'work', label: 'What You Get' },
   { id: 'case-studies', label: 'Case Studies' },
   { id: 'features', label: 'Features' },
-  { id: 'process', label: 'Process' },
+  // removed process link per request
   { id: 'pricing', label: 'Pricing' },
   { id: 'faq', label: 'FAQ' },
   { id: 'contact', label: 'Contact' },
