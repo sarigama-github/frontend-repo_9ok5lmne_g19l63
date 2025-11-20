@@ -16,6 +16,7 @@ import Philosophy from './components/Philosophy'
 import Difference from './components/Difference'
 import Ready from './components/Ready'
 import TopMessage from './components/TopMessage'
+import QuickNav from './components/QuickNav'
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
 
       {/* Top message (first thing people see) */}
       <TopMessage />
+
+      {/* Quick section jump nav */}
+      <QuickNav />
 
       {/* Hero */}
       <Hero />

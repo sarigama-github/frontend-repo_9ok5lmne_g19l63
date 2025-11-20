@@ -1,3 +1,5 @@
+import SectionWrap from './SectionWrap'
+
 const faqs = [
   { q: 'How fast can we launch?', a: 'Most landing pages go live in 7–10 days. Full funnels typically 2–4 weeks depending on scope.' },
   { q: 'Do you handle copy + design?', a: 'Yes. We handle messaging, design, and implementation so you can focus on growth.' },
@@ -7,11 +9,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="relative z-10 mx-auto max-w-4xl px-6 pb-24">
-      <div className="mb-8 text-center">
-        <h2 className="text-3xl font-bold text-white sm:text-4xl">FAQs</h2>
-        <p className="mt-2 text-slate-300/80">Quick answers to common questions.</p>
-      </div>
+    <SectionWrap id="faq" tone="violet" title="FAQs" subtitle="Quick answers to common questions.">
       <div className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
         {faqs.map((f) => (
           <details key={f.q} className="group py-3 open:py-4">
@@ -21,10 +19,10 @@ export default function FAQ() {
                 {f.q}
               </span>
             </summary>
-            <p className="mt-2 text-slate-300/80">{f.a}</p>
+            <p className="mt-2 text-slate-300/85 leading-relaxed">{f.a}</p>
           </details>
         ))}
       </div>
-    </section>
+    </SectionWrap>
   )
 }

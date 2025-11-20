@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SectionWrap from './SectionWrap'
 
 const rows = [
   {
@@ -17,8 +18,7 @@ const rows = [
 
 export default function Difference() {
   return (
-    <section className="relative z-10 mx-auto max-w-6xl px-6 pb-20">
-      <h2 className="mb-6 text-center text-3xl font-bold text-white">The Difference Between Average & Excellence</h2>
+    <SectionWrap id="difference" tone="sky" title="The Difference Between Average & Excellence">
       <div className="space-y-4">
         {rows.map((r, i) => (
           <motion.div
@@ -29,17 +29,19 @@ export default function Difference() {
             transition={{delay:i*0.05, duration:0.45}}
             className="grid grid-cols-1 gap-4 md:grid-cols-2"
           >
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="pointer-events-none absolute -inset-10 -z-10 bg-gradient-to-tr from-slate-400/10 to-transparent blur-3xl"/>
               <div className="text-sm font-bold text-slate-300">{r.left}</div>
-              <ul className="mt-3 space-y-1 text-sm text-slate-300/80">
+              <ul className="mt-3 space-y-2 text-sm text-slate-300/85 leading-relaxed">
                 {r.leftPoints.map(p => (
                   <li key={p} className="flex gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"/> <span>{p}</span></li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="text-sm font-bold text-indigo-400">{r.right}</div>
-              <ul className="mt-3 space-y-1 text-sm text-slate-300/80">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="pointer-events-none absolute -inset-10 -z-10 bg-gradient-to-tr from-indigo-400/10 to-emerald-300/10 blur-3xl"/>
+              <div className="text-sm font-bold text-indigo-300">{r.right}</div>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300/85 leading-relaxed">
                 {r.rightPoints.map(p => (
                   <li key={p} className="flex gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"/> <span>{p}</span></li>
                 ))}
@@ -48,6 +50,6 @@ export default function Difference() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </SectionWrap>
   )
 }

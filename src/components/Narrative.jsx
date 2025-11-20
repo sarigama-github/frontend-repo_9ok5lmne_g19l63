@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion'
+import SectionWrap from './SectionWrap'
 
 export default function Narrative() {
   return (
-    <section className="relative z-10 mx-auto max-w-3xl px-6 pb-20">
-      <div className="prose prose-invert prose-slate mx-auto">
-        <motion.h2 initial={{opacity:0,y:8}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.4}} className="mb-6 text-center text-3xl font-bold text-white">
-          Why companies partner with me (and fire everyone else)
-        </motion.h2>
+    <SectionWrap id="narrative" title="Why companies partner with me (and fire everyone else)" tone="violet">
+      <div className="prose prose-invert prose-slate mx-auto max-w-3xl">
+        <DecorBar />
         <p>Most agencies will take any client they can get.</p>
         <p>I won’t.</p>
         <p>Here’s why:</p>
-        <p>Ah, average, the sweet nectar of forgettable marketing and brand voice everywhere..</p>
+        <PullQuote>Ah, average, the sweet nectar of forgettable marketing and brand voice everywhere..</PullQuote>
         <p>with run-of-the-mill scripts that could only fall on deaf ears.</p>
         <p>Its siren call beckons to the middle manager and seduces even the most well-intentioned organization.</p>
         <p>It’s so attainable, so in grasp.</p>
@@ -45,6 +44,20 @@ export default function Narrative() {
         <p>If that aligns with what you want, we’ll work well together.</p>
         <p className="text-center font-semibold">Ready?</p>
       </div>
-    </section>
+    </SectionWrap>
+  )
+}
+
+function DecorBar() {
+  return (
+    <motion.div initial={{width:0, opacity:0}} whileInView={{width:'100%', opacity:1}} viewport={{once:true}} transition={{duration:0.6}} className="mx-auto mb-6 h-1 rounded-full bg-gradient-to-r from-fuchsia-400 via-sky-400 to-amber-300" />
+  )
+}
+
+function PullQuote({ children }) {
+  return (
+    <motion.blockquote initial={{opacity:0, x:-8}} whileInView={{opacity:1, x:0}} viewport={{once:true}} transition={{duration:0.45}} className="my-6 rounded-xl border border-white/10 bg-white/5 p-4 text-slate-200">
+      {children}
+    </motion.blockquote>
   )
 }

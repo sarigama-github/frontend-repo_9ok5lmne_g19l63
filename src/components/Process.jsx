@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SectionWrap from './SectionWrap'
 
 const steps = [
   { n: '01', title: 'Kickoff & audit', desc: 'We clarify goals, audience, and offers. Then audit assets and find quick wins.' },
@@ -9,11 +10,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-      <div className="mb-8 text-center">
-        <h2 className="text-3xl font-bold text-white sm:text-4xl">How we work</h2>
-        <p className="mt-2 text-slate-300/80">Simple, fast, and focused on outcomes.</p>
-      </div>
+    <SectionWrap id="process" tone="amber" title="How we work" subtitle="Simple, fast, and focused on outcomes.">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {steps.map((s, i) => (
           <motion.div
@@ -22,14 +19,15 @@ export default function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: i * 0.05, duration: 0.45 }}
-            className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md"
+            className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md"
           >
-            <div className="text-sm font-bold text-indigo-400">{s.n}</div>
-            <h3 className="mt-1 text-xl font-semibold text-white">{s.title}</h3>
-            <p className="mt-2 text-slate-300/80">{s.desc}</p>
+            <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-amber-300/20 to-fuchsia-400/20 blur-2xl" />
+            <div className="text-sm font-bold text-amber-300">{s.n}</div>
+            <h3 className="mt-1 text-xl font-semibold text-white leading-relaxed">{s.title}</h3>
+            <p className="mt-2 text-slate-300/85 leading-relaxed">{s.desc}</p>
           </motion.div>
         ))}
       </div>
-    </section>
+    </SectionWrap>
   )
 }
