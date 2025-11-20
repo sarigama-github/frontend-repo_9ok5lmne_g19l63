@@ -3,7 +3,7 @@ import SectionWrap from './SectionWrap'
 
 export default function Narrative() {
   return (
-    <SectionWrap id="narrative" title="The Difference Between Average & Excellence" tone="violet">
+    <SectionWrap id="narrative" title="Why companies partner with me (and fire everyone else)" tone="violet">
       <div className="mx-auto max-w-3xl">
         <DecorBar />
         <div className="space-y-3 text-slate-200/95">
