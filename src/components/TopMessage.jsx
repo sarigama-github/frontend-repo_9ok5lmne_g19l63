@@ -108,40 +108,46 @@ export default function TopMessage() {
             Systems used behind brands trusted by Mercedes, Porsche, and Lamborghini.
           </motion.h1>
 
+          {/* Line 1 */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mx-auto max-w-3xl text-lg leading-relaxed tracking-wide text-slate-200 sm:text-xl"
+            className="mx-auto max-w-4xl text-2xl font-extrabold leading-snug tracking-tight text-slate-100 sm:text-3xl md:text-4xl"
           >
             I build your revenue engine and turn your content into paying customers in 60 days.
           </motion.p>
 
+          {/* Line 2 */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-base font-semibold tracking-widest text-emerald-300/90"
+            className="mx-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.22em] text-emerald-200 shadow-sm ring-1 ring-white/10 backdrop-blur sm:text-base"
           >
             Not an agency. No retainer.
           </motion.p>
 
+          {/* Line 3 */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base leading-relaxed tracking-wide text-slate-300"
+            className="mx-auto max-w-3xl text-lg font-medium leading-relaxed tracking-wide text-slate-200 sm:text-xl md:text-2xl"
           >
             I install your systems (funnels + emails + automation) tied to outcomes.
           </motion.p>
 
+          {/* Line 4 */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-base tracking-[0.08em] text-amber-300"
+            className="mx-auto max-w-3xl text-xl font-extrabold tracking-tight text-transparent sm:text-2xl md:text-3xl"
           >
-            18 booked calls/week from cold traffic using this exact playbook
+            <span className="bg-gradient-to-r from-amber-300 via-rose-300 to-emerald-300 bg-clip-text">
+              18 booked calls/week from cold traffic using this exact playbook
+            </span>
           </motion.p>
 
           {/* Primary CTAs (updated per request) */}
