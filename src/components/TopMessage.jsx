@@ -2,39 +2,17 @@ import { motion } from 'framer-motion'
 
 export default function TopMessage() {
   return (
-    <section className="relative z-20 flex min-h-screen items-center justify-center px-6">
-      <div className="relative mx-auto w-full max-w-5xl text-center">
-        {/* Video */}
-        <div className="mx-auto mb-8 w-full max-w-3xl">
-          <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40">
-            <div className="pb-[56.25%]"></div>
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/34P2DIygsuU?si=gu4PJ37En9cYb4hC"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
-        {/* Headline block with varied font spacing and coloring per line */}
-        <div className="space-y-5">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-sm font-medium tracking-[0.35em] text-sky-300/90"
-          >
-            See how it works
-          </motion.p>
+    <section className="relative z-20 flex items-center justify-center px-6">
+      <div className="relative mx-auto w-full max-w-6xl py-12 sm:py-16">
+        {/* Headline block (design comes first now) */}
+        <div className="space-y-5 text-center">
+          {/* removed: small label "See how it works" */}
 
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="bg-gradient-to-r from-white via-sky-200 to-white bg-clip-text text-2xl font-semibold leading-tight tracking-wide text-transparent sm:text-3xl"
+            className="bg-gradient-to-r from-white via-sky-200 to-white bg-clip-text text-3xl font-semibold leading-tight tracking-wide text-transparent sm:text-4xl"
           >
             Systems used behind brands trusted by Mercedes, Porsche, and Lamborghini.
           </motion.h1>
@@ -75,15 +53,25 @@ export default function TopMessage() {
             18 booked calls/week from cold traffic using this exact playbook
           </motion.p>
 
-          {/* Guarantee / Note */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mx-auto max-w-3xl text-sm leading-relaxed tracking-wide text-slate-400"
-          >
-            NOTE: If I can’t improve revenue in 60 days, you shouldn’t pay me.
-          </motion.p>
+          {/* Primary CTAs */}
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="https://www.linkedin.com/in/ash-yu-291761367/"
+              target="_blank"
+              rel="noreferrer"
+              className="group relative inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-bold text-white transition hover:scale-[1.02]"
+            >
+              <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400" />
+              <span className="relative">Get my funnel strategy</span>
+            </a>
+
+            <a
+              href="#calendar"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-base font-semibold text-white/90 backdrop-blur transition hover:bg-white/10"
+            >
+              Book a 15‑min fit call
+            </a>
+          </div>
         </div>
       </div>
 

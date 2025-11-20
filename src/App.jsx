@@ -17,6 +17,7 @@ import Difference from './components/Difference'
 import Ready from './components/Ready'
 import TopMessage from './components/TopMessage'
 import QuickNav from './components/QuickNav'
+import CalendlyEmbed from './components/CalendlyEmbed'
 
 function App() {
   return (
@@ -29,13 +30,15 @@ function App() {
         </div>
       </header>
 
-      {/* Top message (first thing people see) */}
+      {/* Quick section jump nav at very top */}
+      <div className="pt-20">{/* spacer under fixed header */}
+        <QuickNav />
+      </div>
+
+      {/* Top message now shows the main design instead of video */}
       <TopMessage />
 
-      {/* Quick section jump nav */}
-      <QuickNav />
-
-      {/* Hero */}
+      {/* Hero now contains the embedded video + CTAs */}
       <Hero />
 
       {/* Content sections */}
@@ -53,6 +56,8 @@ function App() {
         <Difference />
         <Pricing />
         <FAQ />
+        {/* Calendly embed just before Contact */}
+        <CalendlyEmbed />
         <Contact />
 
         {/* Footer */}
