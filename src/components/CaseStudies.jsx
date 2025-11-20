@@ -13,7 +13,7 @@ const studies = [
     result: 'Result: +20% lift in opens → meetings → revenue in 47 days',
     quote: '“Logistics shouldn’t move this fast… but ours suddenly did.”',
     color: 'from-indigo-400/15 to-sky-400/10',
-    img: 'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://share.google/images/vDnxvdtFwd8l4hfgT',
   },
   {
     title: 'Motion Creators - 300k+ Audience',
@@ -26,7 +26,7 @@ const studies = [
     result: 'Result: From dead list → 28 sales conversations/month.',
     quote: '“Didn’t know our own audience could hit this hard.”',
     color: 'from-fuchsia-400/15 to-rose-400/10',
-    img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://share.google/images/IXzPThrSnuoaQM8Cq',
   },
   {
     title: 'Dr. Vegan - 6M+ Followers on Social  Media',
@@ -39,7 +39,7 @@ const studies = [
     result: 'Result: New profitable channel from the existing audience + $12K/m in digital sales.',
     quote: '“Same followers. Very different revenue.”',
     color: 'from-amber-400/15 to-emerald-400/10',
-    img: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://share.google/images/xEJNonxe7JXQkDTOv',
   },
 ]
 
