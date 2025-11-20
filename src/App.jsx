@@ -41,10 +41,11 @@ function App() {
       {/* Hero now contains the embedded video + CTAs */}
       <Hero />
 
+      {/* Go straight to trusted-by-brands section */}
+      <Logos />
+
       {/* Content sections */}
       <main>
-        <Intro />
-        <Logos />
         <Features />
         <Narrative />
         <Cards />

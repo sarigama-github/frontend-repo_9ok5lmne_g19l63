@@ -49,7 +49,14 @@ const blocks = [
 export default function Premium() {
   return (
     <SectionWrap id="premium" tone="fuchsia" title="Premium Service and Offer">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {/* Vibrant, powerful design backdrop */}
+      <div className="relative mb-6">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -top-10 left-1/2 h-64 w-[120%] -translate-x-1/2 rotate-3 rounded-[3rem] bg-[conic-gradient(from_180deg_at_50%_50%,rgba(236,72,153,0.25),rgba(99,102,241,0.25),rgba(16,185,129,0.25),rgba(251,191,36,0.25),rgba(236,72,153,0.25))] blur-2xl" />
+          <div className="absolute top-24 left-1/2 h-48 w-[90%] -translate-x-1/2 rounded-[3rem] bg-[radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,0.08),transparent_70%)]" />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {blocks.map((b, i) => (
           <motion.div
             key={b.title}
@@ -61,13 +68,13 @@ export default function Premium() {
           >
             <div className={`pointer-events-none absolute -inset-12 -z-10 bg-gradient-to-tr ${b.color} blur-3xl`} />
             <div className="text-sm font-bold text-fuchsia-300">{b.title}</div>
-            <div className="mt-1 text-lg font-semibold text-white leading-relaxed">{b.lead}</div>
+            <div className="mt-1 text-lg font-semibold leading-relaxed text-white">{b.lead}</div>
             <ul className="mt-3 space-y-2 text-sm text-slate-300/85">
               {b.body.map(line => (
                 <li key={line} className="flex gap-2 leading-relaxed"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-fuchsia-300"/> <span>{line}</span></li>
               ))}
             </ul>
-            <p className="mt-3 text-slate-200 italic leading-relaxed">Founder translation: {b.founder}</p>
+            <p className="mt-3 italic leading-relaxed text-slate-200">Founder translation: {b.founder}</p>
           </motion.div>
         ))}
       </div>

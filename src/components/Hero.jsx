@@ -30,13 +30,13 @@ export default function Hero() {
           <p className="text-sm tracking-wide">NOTE: If I can’t improve revenue in 60 days, you shouldn’t pay me.</p>
         </div>
 
-        {/* Post-video actions */}
+        {/* Post-video actions (only one button centered, per request) */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="mt-6 flex items-center justify-center"
         >
           <a
             href="#calendar"
@@ -44,12 +44,6 @@ export default function Hero() {
           >
             <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500 via-sky-500 to-amber-400" />
             <span className="relative">Check availability</span>
-          </a>
-          <a
-            href="#calendar"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-base font-semibold text-white/90 backdrop-blur transition hover:bg-white/10"
-          >
-            Book a 15‑min fit call
           </a>
         </motion.div>
       </div>
