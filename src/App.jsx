@@ -56,9 +56,9 @@ function App() {
         <Philosophy />
         <Difference />
         <Pricing />
-        <FAQ />
-        {/* Calendly embed just before Contact */}
+        {/* Move Calendly section before FAQs as requested */}
         <CalendlyEmbed />
+        <FAQ />
         <Contact />
 
         {/* Footer */}
