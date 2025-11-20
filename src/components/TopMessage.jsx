@@ -5,38 +5,91 @@ export default function TopMessage() {
     <section className="relative z-20 flex items-center justify-center px-6">
       {/* Immersive background behind the headline */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        {/* Existing soft gradients */}
-        <div className="absolute left-1/2 top-1/2 h-[80vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-[4rem] bg-[radial-gradient(60%_60%_at_50%_40%,rgba(56,189,248,0.20),transparent_60%)] blur-2xl" />
-        <div className="absolute left-1/2 top-[30%] h-[70vh] w-[80vw] -translate-x-1/2 -rotate-6 rounded-[4rem] bg-[conic-gradient(from_120deg_at_50%_50%,rgba(99,102,241,0.15),rgba(236,72,153,0.2),rgba(251,191,36,0.15),rgba(56,189,248,0.15),rgba(99,102,241,0.15))] opacity-70 blur-2xl" />
+        {/* Ambient wash */}
+        <div className="absolute left-1/2 top-1/2 h-[80vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-[4rem] bg-[radial-gradient(60%_60%_at_50%_40%,rgba(56,189,248,0.18),transparent_60%)] blur-2xl" />
 
-        {/* New immersive moving object (transparent, no hard edges) */}
+        {/* Beating, modern color object (sits right behind copy) */}
         <motion.div
           aria-hidden
-          initial={{ scale: 0.98, opacity: 0.9 }}
-          animate={{ rotate: 360, scale: 1, opacity: 1 }}
-          transition={{ duration: 80, ease: 'linear', repeat: Infinity }}
-          className="absolute left-1/2 top-[46%] h-[120vmin] w-[120vmin] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
-          style={{
-            background:
-              'conic-gradient(from 0deg, rgba(16,185,129,0.25), rgba(56,189,248,0.22), rgba(99,102,241,0.25), rgba(236,72,153,0.22), rgba(251,191,36,0.22), rgba(16,185,129,0.25))',
-            WebkitMaskImage:
-              'radial-gradient(closest-side, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0) 100%)',
-            maskImage:
-              'radial-gradient(closest-side, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0) 100%)',
-            mixBlendMode: 'screen',
-            filter: 'saturate(120%)',
+          className="absolute left-1/2 top-[44%] h-[120vmin] w-[120vmin] -translate-x-1/2 -translate-y-1/2"
+          initial={{ opacity: 0.9, scale: 1 }}
+          animate={{
+            opacity: 1,
+            rotate: 360,
+            scale: [1, 1.065, 1, 1.045, 1], // subtle heartbeat
+            filter: [
+              'saturate(115%) hue-rotate(0deg) blur(42px)',
+              'saturate(130%) hue-rotate(8deg) blur(46px)',
+              'saturate(115%) hue-rotate(0deg) blur(42px)',
+              'saturate(125%) hue-rotate(-6deg) blur(44px)',
+              'saturate(115%) hue-rotate(0deg) blur(42px)'
+            ],
           }}
-        />
+          transition={{
+            rotate: { duration: 90, ease: 'linear', repeat: Infinity },
+            scale: { duration: 2.6, times: [0, 0.28, 0.55, 0.78, 1], ease: ['easeInOut','easeOut','easeInOut','easeOut'], repeat: Infinity },
+            filter: { duration: 2.6, repeat: Infinity, ease: 'easeInOut' },
+            opacity: { duration: 0.8 },
+          }}
+          style={{ mixBlendMode: 'screen' }}
+        >
+          {/* SVG blob with premium gradient fill */}
+          <motion.svg
+            viewBox="0 0 600 600"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <defs>
+              <radialGradient id="blobGlow" cx="50%" cy="45%" r="60%">
+                <stop offset="0%" stopColor="rgba(99,102,241,0.28)" />
+                <stop offset="35%" stopColor="rgba(56,189,248,0.25)" />
+                <stop offset="68%" stopColor="rgba(16,185,129,0.22)" />
+                <stop offset="100%" stopColor="rgba(236,72,153,0.20)" />
+              </radialGradient>
+              <linearGradient id="pulseStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="rgba(16,185,129,0.85)" />
+                <stop offset="50%" stopColor="rgba(56,189,248,0.9)" />
+                <stop offset="100%" stopColor="rgba(236,72,153,0.85)" />
+              </linearGradient>
+            </defs>
 
-        {/* Subtle drifting glow to add depth */}
+            {/* Core blob */}
+            <g>
+              <path
+                d="M300,90 C380,90 470,140 510,210 C550,280 540,360 500,430 C460,500 390,540 300,540 C210,540 135,505 95,435 C55,365 60,275 105,205 C150,135 220,90 300,90 Z"
+                fill="url(#blobGlow)"
+              />
+            </g>
+
+            {/* Soft inner light */}
+            <ellipse cx="300" cy="250" rx="150" ry="110" fill="rgba(255,255,255,0.09)" />
+
+            {/* Pulsing ring for a heartbeat accent */}
+            <motion.circle
+              cx="300"
+              cy="315"
+              r="160"
+              fill="none"
+              stroke="url(#pulseStroke)"
+              strokeWidth="3"
+              initial={{ opacity: 0.35, scale: 0.98 }}
+              animate={{ opacity: [0.35, 0.15, 0.35], scale: [0.98, 1.05, 0.98] }}
+              transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+              style={{ filter: 'blur(1px)' }}
+            />
+          </motion.svg>
+        </motion.div>
+
+        {/* Side glow that gently drifts for parallax depth */}
         <motion.div
           aria-hidden
-          className="absolute left-[10%] top-[15%] h-[40vmin] w-[40vmin] rounded-full"
-          initial={{ x: -10, y: 0, opacity: 0.6 }}
-          animate={{ x: 15, y: 8, opacity: 0.8 }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
+          className="absolute left-[8%] top-[18%] h-[42vmin] w-[42vmin] rounded-full"
+          initial={{ x: -10, y: 0, opacity: 0.55 }}
+          animate={{ x: 18, y: 10, opacity: 0.75 }}
+          transition={{ duration: 11, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
           style={{
-            background: 'radial-gradient(circle at 30% 30%, rgba(59,130,246,0.25), transparent 60%)',
+            background: 'radial-gradient(circle at 30% 30%, rgba(59,130,246,0.22), transparent 60%)',
             filter: 'blur(40px)',
             mixBlendMode: 'screen',
           }}
