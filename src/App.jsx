@@ -6,6 +6,15 @@ import Process from './components/Process'
 import Pricing from './components/Pricing'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
+import Intro from './components/Intro'
+import Features from './components/Features'
+import Narrative from './components/Narrative'
+import CaseStudies from './components/CaseStudies'
+import Premium from './components/Premium'
+import Who from './components/Who'
+import Philosophy from './components/Philosophy'
+import Difference from './components/Difference'
+import Ready from './components/Ready'
 
 function App() {
   return (
@@ -23,9 +32,17 @@ function App() {
 
       {/* Content sections */}
       <main>
+        <Intro />
         <Logos />
+        <Features />
+        <Narrative />
         <Cards />
         <Process />
+        <CaseStudies />
+        <Premium />
+        <Who />
+        <Philosophy />
+        <Difference />
         <Pricing />
         <FAQ />
         <Contact />
